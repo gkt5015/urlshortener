@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-var urlSchema = mongoose.Schema({
+var Schema = mongoose.Schema;
+
+var urlSchema = new Schema({
     
     original: String,
     shortened: String
