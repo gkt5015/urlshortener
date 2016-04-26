@@ -21,7 +21,7 @@ router.get('/*', function(req,res){
                     console.log("adding to database");
                     var newModel = new urls();
                     var newID = shortID.generate();
-                    newModel.shortened = "https://urlshortener-gkt5015.c9users.io/short/"+newID;
+                    newModel.shortened = "https://urlshortener-128.herokuapp.com/short/"+newID;
                     newModel.original = parsed;
                     newModel.save(function(err,data){
                         if(err) throw err;
