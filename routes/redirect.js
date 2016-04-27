@@ -22,7 +22,7 @@ router.get('/',function(req,res){
                 //res.send(found);
                 res.redirect(301, found[0].original);
                 console.log("found something..... "+ found[0].original);
-                mongoose.connection.close();
+                
 
             }
             
