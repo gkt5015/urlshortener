@@ -8,9 +8,16 @@ var mongoose = require('mongoose');
 var redirect = require('./routes/redirect');
 app.engine('html',require('ejs').renderFile);
 app.set('view engine', 'html');
-if(mongoose.connect.readyState === 0){
-mongoose.connect('mongodb://gtang:lphie@ds019078.mlab.com:19078/heroku_dvk3w099');
+console.log(mongoose.connection.readyState)
+if(mongoose.connection.readyState === 0){
+mongoose.connect('mongodb://gtang:lphie@ds019078.mlab.com:19078/heroku_dvk3w099',function(err){
+    if(err){
+        throw err;
+    }
+    console.log(mongoose.connection.readyState)
+});
 }
+
 app.use('/', index);
 app.use('/new',sites);
 app.use('/all',all);
